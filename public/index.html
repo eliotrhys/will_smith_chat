@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>WebSockets 101</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-center spin-me">
+          <img src="./images/will-smith-two.png" style="width: 100px;" class="p-3" alt=""/>
+          <div>
+            <h1 class="main-title text-center mb-0">Will Smith Chat</h1>
+            <p class="mb-0 text-center">Send this link to somebody else and chat about Will Smith!</p>
+          </div>
+          <img src="./images/will-smith-three.png" style="width: 100px;" class="p-3" alt=""/>
+        </div>
+
+
+        <div id="will-smith-chat">
+          <div class="row mb-3">
+            <div class="col-12 col-md-8 offset-md-2">
+              <div class="card bg-primary" style="box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);">
+                <div class="card-body">
+                  <div id="chat-window" class="mb-4">
+                    <div id="output"></div>
+                    <div id="feedback"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <input id="handle" type="text" class="form-control" placeholder="Handle" />
+                  </div>
+                  <div class="form-group">
+                    <textarea id="message" type="text" class="form-control" placeholder="Message" rows="4"></textarea>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <button id="send" class="btn btn-dark p-3" style="box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  var button = document.querySelector('.btn');
+  button.addEventListener('click', function() {
+    var duration = 0.3,
+        delay = 0.08;
+    TweenMax.to($button, duration, {scaleY: 1.6, ease: Expo.easeOut});
+    TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
+    TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
+  });
+</script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/chat.js"></script>
+
+  </body>
+</html>
